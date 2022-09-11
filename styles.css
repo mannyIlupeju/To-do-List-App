@@ -1,0 +1,108 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.7rem;
+}
+
+.wrapper {
+  border: 1px solid black;
+  padding: 2rem;
+}
+
+.container {
+  background-color:orange;
+  width: 25vw;
+  height: 75vh;
+  margin: 0 auto;
+  margin-top: 8rem;
+  overflow-y: auto;
+}
+
+.quoteText {
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 2.5rem;
+  line-height: 1.5;
+}
+
+.dates {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.wrapper2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  
+}
+
+.fabutton {
+  border: none;
+}
+
+.fa-circle-plus {
+  width: 2.5rem;
+  color:black;
+}
+
+.fa-circle-plus:hover {
+  color: grey;
+}
+
+input::placeholder {
+  color: red;
+}
+
+
+
+.to-do {
+ width: 45rem;
+ border: 0;
+ background-color: rgb(238, 235, 235);
+ padding: 1.2rem;
+ border: 2px solid red;
+}
+
+/* list style */
+
+li {
+  font-size: 2rem;
+  list-style: none;
+  text-align: center;
+  margin-top: 1.2rem;
+  padding: 1rem;
+  position: relative;
+}
+
+input.check {
+ position: absolute;
+ left: 4rem;
+ top: 1.3rem;
+ border-radius: 50%;
+ width: 20px;
+ height: 20px;
+}
+
+.fa-solid {
+  position: absolute;
+  right: 4rem;
+  top: 1.3rem;
+  width: 20px;
+  height: 20px;
+}
+
+.marked {
+  text-decoration: line-through;
+}
+
+
+

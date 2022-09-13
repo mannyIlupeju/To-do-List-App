@@ -92,7 +92,7 @@ input.check {
  height: 20px;
 }
 
-.fa-solid {
+.fa-trash-can {
   position: absolute;
   right: 4rem;
   top: 1.3rem;
@@ -100,9 +100,19 @@ input.check {
   height: 20px;
 }
 
+.fa-trash-can:hover {
+  color: grey;
+}
+
 .marked {
   text-decoration: line-through;
 }
+
+.trashed {
+  display: none
+}
+
+
 
 
 

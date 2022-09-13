@@ -31,6 +31,7 @@ $(".dates").text(strDate);
 displayDate()
 
 
+//----------------------------------------------------------------// 
 //Generating Dynamic lists
 //when user clicks submit
 let btn = document.getElementById("submit");
@@ -41,7 +42,8 @@ let ul = document.getElementById("ul");
 
 
 
-//When user clicks SUBMIT
+
+// //When user clicks SUBMIT
 btn.addEventListener("click", function(){
   if(txt.value != ""){
     inputEntry();
@@ -50,10 +52,11 @@ btn.addEventListener("click", function(){
   }
 })
 
-// //when user clicks ENTER
+// // //when user clicks ENTER
 todo.addEventListener("keypress", function(e){
   if(txt.value != "" && e.code === "Enter"){
     inputEntry()
+    
   } else if(txt.value === "" && e.code === "Enter"){
     alert("please add note");
   }
@@ -62,65 +65,105 @@ todo.addEventListener("keypress", function(e){
 
 
 
+//----------------------------------------------------------------// 
 //Function to create list 
 function inputEntry() {
   let list = document.createElement("li");
-  list.innerHTML = txt.value;
+  // list.innerHTML = textVal;
   list.setAttribute("class", "item");
   ul.appendChild(list);
 
 
+  //Value of input text entry
+  let textVal = txt.value;
   function clearText(){
     txt.value="";
   }
   clearText();
+
+  
   
  
- 
+  //----------------------------------------------------------------// 
   //create input element for selecting task and span item for icons.
+  //Each list element form a nodelist which is a kind of array we can use. 
+  var itemList = document.querySelectorAll(".item") 
+  console.log(itemList);
+
+ //create dynamic Id
+  for(let i = 0; i < itemList.length; i++){
+    var id = i;
+    console.log(id);
+  }
+
+ //Create input element with dynamic Id
   let input = document.createElement("input");
   input.setAttribute("type", "checkbox");
   input.setAttribute("class","check");
+  input.setAttribute("id", id)
+  
   list.prepend(input)
 
+
+  //----------------------------------------------------------------// 
+  //create Text
+  
+  let textSpace = document.createElement("span");
+
+  textSpace.setAttribute("class", "toDo");
+  textSpace.innerHTML = textVal;
+  list.append(textSpace)
+
+
+
+ //----------------------------------------------------------------// 
   //trashcan icon
   let trash = document.createElement("span");
   trash.setAttribute("class", "fa-solid fa-trash-can");
+  trash.setAttribute("id", "trashId" + id)
   list.append(trash)
 
+  //trash functionality
+  // listId.addEventListener("click", trashIcon)
 
   
+  //Function to delete a generated List when TrashIcon is clicked
+  
+  
+
+
+
+
+
+ //----------------------------------------------------------------// 
  //Check Button functionality
  
-  var checkButton = document.querySelector('input.check');
-  // checkButton.addEventListener("click", checkbox);
+  // var checkButton = document.querySelector('input.check');
+  var listId= document.getElementById(id);
+  listId.addEventListener("click", checkbox);
   
+  
+ 
    
-   
-  // function checkbox(e){
-  // if(e.target.checked) {
-  //  list.classList.add("marked")
-  // } else if(e.target.checked == false){
-  //   console.log("checkbox unchecked");
-  //   list.classList.remove("marked")
-  // }
-  // }
-  
-
-  var itemList = document.querySelectorAll(".item") 
-  
-
-
-  for (let i=0; i < itemList.length; i++) {
-    console.log(itemList);
+  function checkbox(e){
+  if(e.target.checked) {
+    console.log(e);
+   list.classList.add("marked")
+  } else if(e.target.checked == false){
+    console.log("checkbox unchecked");
+    list.classList.remove("marked")
+  }
   }
 
+
+
   
-  // for (let i = 0; i < checkButton.length; i++) {
-  //   checkButton[i].addEventListener("click", function(item){
-  //     console.log(item.target == checkButton);
-  //   })
-  // }
+  
+
+  
+
+
+  
 
 
 

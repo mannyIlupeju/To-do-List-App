@@ -17,12 +17,12 @@ body {
 }
 
 .container {
-  background-color:orange;
-  width: 25vw;
+  width: 40vw;
+  max-width: 100%;
   height: 75vh;
   margin: 0 auto;
   margin-top: 8rem;
-  overflow-y: auto;
+  overflow: auto;
 }
 
 .quoteText {
@@ -30,9 +30,12 @@ body {
   text-align: center;
   padding: 2.5rem;
   line-height: 1.5;
+  font-family: 'Lora', serif;
+
 }
 
 .dates {
+  font-family: 'Source Code Pro', monospace;
   text-align: center;
   font-size: 1.5rem;
 }
@@ -49,6 +52,18 @@ body {
   border: none;
 }
 
+.btn {
+  padding: 0.8rem;
+  border-radius: 10%;
+  
+}
+
+.btn:hover {
+  background-color: rgb(156, 155, 155);
+  -webkit-box-shadow: 5px 5px 9px 0px #000000; 
+  box-shadow: 5px 5px 9px 0px #000000;
+}
+
 .fa-circle-plus {
   width: 2.5rem;
   color:black;
@@ -58,16 +73,21 @@ body {
   color: grey;
 }
 
+/* Input type field */
 input::placeholder {
   color: red;
 }
 
+input[type=text] {
+  border: none;
+  border-bottom: 2px solid rgb(12, 12, 12);
+}
 
 
 .to-do {
- width: 45rem;
+ width: 52rem;
  border: 0;
- background-color: rgb(238, 235, 235);
+ 
  padding: 1.2rem;
  border: 2px solid red;
 }
@@ -78,9 +98,17 @@ li {
   font-size: 2rem;
   list-style: none;
   text-align: center;
-  margin-top: 1.2rem;
+  margin-top: 0.2rem;
   padding: 1rem;
   position: relative;
+  
+}
+
+.item {
+  font-family: 'Lora', serif;
+  font-size: 1.8rem;
+  background-color: rgb(224, 223, 223);
+  cursor: pointer;
 }
 
 input.check {
@@ -106,12 +134,8 @@ input.check {
 
 .marked {
   text-decoration: line-through;
+  color: red
 }
-
-.trashed {
-  display: none
-}
-
 
 
 
